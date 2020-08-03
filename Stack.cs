@@ -4,7 +4,7 @@ namespace ComplexDataStructures
 {
     internal class Stack
     {
-        private string[] array; // Stores an array of integers
+        private string[] array; // Stores an array of values
 
         private int size; // size of the array
 

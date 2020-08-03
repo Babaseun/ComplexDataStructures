@@ -40,7 +40,7 @@ namespace ComplexDataStructures
                 current = current.Next; // Resets the current value to the next node
             }
             prevNode.Next = current.Next; //Excludes the value  i want to remove by joining the prevNode.Next to the current.Next
-            this.length--;// Decrease the length of the linked-list
+            this.length--;// Decreasing the length of the linked-list
         }
 
         public void Search(string value)
@@ -93,44 +93,44 @@ namespace ComplexDataStructures
             }
             catch (NullReferenceException)
             {
-                return false;
+                return false; // returns false if there is a null reference exception
             }
         }
 
         public bool isEmpty()
         {
-            return this.length == 0;
+            return this.length == 0; // returns a boolean value if the length of the list is 0 or greater than 0
         }
 
         public int Size()
         {
-            return this.length;
+            return this.length;// Returns the size of the linked-list
         }
 
-        public void InsertAt(int index, string value)
+        public void InsertAt(int index, string value) // Inserting at a particular index in the linked-list
         {
             int position = 0;
-            var current = this.Head;
+            var current = this.Head; //Holds the linked-list from the head
             Node prevNode = new Node("");
             var node = new Node(value);
 
-            if (index == 0)
+            if (index == 0) // if the index of the replacement node is 0
             {
-                this.Head = node;
-                node.Next = current;
+                this.Head = node; // Sets the Head of the linked-list to the replacement node
+                node.Next = current;// sets the replacement node.next all the values previously in the current node
             }
             else
             {
-                while (position < index)
+                while (position < index) // if we are not replacing the head node
                 {
-                    position++;
-                    prevNode = current;
-                    current = current.Next;
+                    position++; // increments  the position to the index of the replacement node
+                    prevNode = current; // Assigning the current node to the previous node
+                    current = current.Next;// Setting current to the next element in the linked-list
                 }
-                node.Next = current;
-                prevNode.Next = node;
+                node.Next = current; //sets the node.next to the current
+                prevNode.Next = node; // previous node.next to the node
             }
-            this.length++;
+            this.length++;// increments length by one
         }
 
         public string Print()
@@ -138,7 +138,7 @@ namespace ComplexDataStructures
             var str = "The Head >>>>> => ";
             var current = this.Head;
 
-            while (current != null)
+            while (current != null)           // prints the values in the linked-list
             {
                 str += current.Element + " <= ";
                 current = current.Next;
