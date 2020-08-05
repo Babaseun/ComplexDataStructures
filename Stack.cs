@@ -11,8 +11,6 @@ namespace ComplexDataStructures
         public Stack(int size)
         {
             array = new T[size];  // De clearing a new object of generic type T and the size
-
-            size = 0; // size of the array
         }
 
         public bool isEmpty()

@@ -45,17 +45,17 @@ namespace ComplexDataStructures.Helpers
             {
                 Console.WriteLine("Enter value you want to remove");
                 string value = Console.ReadLine(); // Gets the value to be removed from the user
-                linkedList.Remove(value); // Calling the remove method of the linked-list class
+                linkedList.Remove(value); // Calling the remove method of the linked-list class to remove a value
             }
             if (option == "3")
             {
                 Console.WriteLine("Enter value you want to search for");
                 string value = Console.ReadLine(); // Gets the value to be search for from the user
-                linkedList.Search(value); // Calling the search method of the linked-list class
+                linkedList.Search(value); // Calling the search method of the linked-list class and passing the value to be search for
             }
             if (option == "4")
             {
-                Console.WriteLine("Enter the value you want  the index of");
+                Console.WriteLine("Enter the value you want the index of");
                 string value = Console.ReadLine(); // Gets the value from the user
                 Console.WriteLine("The index is " + linkedList.IndexOf(value)); // Return the Index using the indexOf method of the linked-list class
             }
@@ -67,7 +67,7 @@ namespace ComplexDataStructures.Helpers
             }
             if (option == "6")
             {
-                Console.WriteLine(linkedList.isEmpty()); // Returns if the linked-list is empty via the isEmpty method of the linked-list class
+                Console.WriteLine(linkedList.isEmpty()); // Returns a boolean if the linked-list is empty via the isEmpty method of the linked-list class
             }
             if (option == "7")
             {

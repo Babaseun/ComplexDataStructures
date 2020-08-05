@@ -49,19 +49,19 @@ namespace ComplexDataStructures.Helpers
             }
             if (option == "3")
             {
-                Console.WriteLine("Peek Value is " + stack.Peek()); // Calls the PEEK method for the Stack class
+                Console.WriteLine("Peek Value is " + stack.Peek()); // Calls the PEEK method of the Stack class and returns the last value in the stack
             }
             if (option == "4")
             {
-                stack.Print(); // Calls the PRINT method for the Stack class
+                stack.Print(); // Calls the PRINT method for the Stack class and prints all the value in the stack
             }
             if (option == "5")
             {
-                Console.WriteLine(stack.isEmpty()); // Calls the ISEMPTY method for the Stack class
+                Console.WriteLine(stack.isEmpty()); // Calls the ISEMPTY method for the Stack class and returns a boolean if the stack is empty
             }
             if (option == "6")
             {
-                Console.WriteLine("Size is " + stack.Size()); // Calls the SIZE method for the Stack class
+                Console.WriteLine("Size is " + stack.Size()); // Calls the SIZE method for the Stack class and returns the size of the stack
             }
             if (option == "q")
             {
