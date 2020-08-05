@@ -2,22 +2,23 @@
 
 namespace ComplexDataStructures
 {
-    internal class LinkedList
+    internal class LinkedList<T>
     {
-        public Node Head { get; set; } // Sets the head of a LinkedList
+        public Node<T> Head = null; // Sets the head of a LinkedList with a node type with an initial value of null
         private int length = 0;// The length of the values added to the linkedList
 
-        public void Add(string value)
+        public void Add(T value)
         {
-            var node = new Node(value);// Creates an object of the node class
+            var node = new Node<T>(value);/** Creates an object of the node class with a required value passed in
+                                           * of generic type T **/
 
             if (this.Head == null)
             {
-                this.Head = new Node(value); // Adds the head of the linked-list when it is null
+                this.Head = new Node<T>(value); // Adds the head of the linked-list when it is null
             }
             else
             {
-                var current = this.Head;// When the head is not null
+                var current = this.Head; // When the head is not null assign the head to current
 
                 while (current.Next != null) //Looping through the linked-list till it is null
                 {
@@ -28,28 +29,31 @@ namespace ComplexDataStructures
             this.length++; // Increments the length by one
         }
 
-        public void Remove(string value)
+        public void Remove(T value)
         {
-            Node prevNode = new Node("");// Creates an empty node
+            Node<T> prevNode = new Node<T>(value);/** Creates a temporary node to store previous
+                                                   * nodes in the linkedList **/
 
             var current = this.Head; // Gets the head of the linked-list
 
-            while (current.Element != value)
+            while (!current.Element.Equals(value)) /** When the current element is not equal
+                                                    * to the value to be removed
+                                                    **/
             {
                 prevNode = current;// Assigns the current value to the previousNode
                 current = current.Next; // Resets the current value to the next node
             }
-            prevNode.Next = current.Next; //Excludes the value  i want to remove by joining the prevNode.Next to the current.Next
+            prevNode.Next = current.Next; //Excludes the value to be removed by joining the prevNode.Next to the current.Next
             this.length--;// Decreasing the length of the linked-list
         }
 
-        public void Search(string value)
+        public void Search(T value)
         {
             try
             {
                 var current = this.Head; // Starts from the head and assigns the value to current
 
-                while (current.Element != value) // While the value is not the value i am looking for
+                while (!current.Element.Equals(value)) // While the value is not the value i am looking for
                 {
                     current = current.Next; // Re assigns current to the next value in the linked-list
                 }
@@ -61,18 +65,18 @@ namespace ComplexDataStructures
             }
         }
 
-        public int IndexOf(string value)
+        public int IndexOf(T value)
         {
             try
             {
                 var index = 0; // Starts the index from zero
-                var current = this.Head;// Assigns the current list to current
-                while (current.Element != value)// While the current element is not the value i am looking for
+                var current = this.Head;// Assigns the current list to the current variable
+                while (!current.Element.Equals(value)) // While the current element is not the value i am looking for
                 {
                     current = current.Next; // Re assign current to the next element
                     index++;// Increments the index till it is finally found
                 }
-                return index; // returns the index
+                return index; // returns the index after the value has been found
             }
             catch (NullReferenceException)
             {
@@ -80,14 +84,16 @@ namespace ComplexDataStructures
             }
         }
 
-        public bool Check(string value) // Check if the values exists
+        public bool Check(T value) // Check if the values exists
         {
             try
             {
                 var current = this.Head;
-                while (current.Element != value)
+                while (!current.Element.Equals(value))                  /** While the current element is not
+                                                                    * the value i am looking for **/
                 {
-                    current = current.Next;
+                    current = current.Next; /* Re-assigns the current to the next element in the
+                                             * LinkedList*/
                 }
                 return true;
             }
@@ -107,12 +113,13 @@ namespace ComplexDataStructures
             return this.length;// Returns the size of the linked-list
         }
 
-        public void InsertAt(int index, string value) // Inserting at a particular index in the linked-list
+        public void InsertAt(int index, T value) // Inserting at a particular index in the linked-list
         {
             int position = 0;
+
             var current = this.Head; //Holds the linked-list from the head
-            Node prevNode = new Node("");
-            var node = new Node(value);
+            Node<T> prevNode = new Node<T>(value);
+            var node = new Node<T>(value);
 
             if (index == 0) // if the index of the replacement node is 0
             {

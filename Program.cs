@@ -14,14 +14,14 @@ namespace ComplexDataStructures
         {
             while (true)
             {
-                StandardMessages.MainMenu();
+                StandardMessages.MainMenu();// A static method from the standard messages class and it returns a menu of options
 
                 var option = Console.ReadLine();// stores the option value of the user
                 Console.WriteLine();
 
                 if (option == "1")
                 {
-                    var size = StandardMessages.Values();
+                    var size = StandardMessages.Size();// returns the size inputed by the user
                     StackProgram stack = new StackProgram(size); // Creates an instance of the stackProgram class
                     while (true) // A continuous loop for the stack program class
                     {
@@ -31,7 +31,7 @@ namespace ComplexDataStructures
 
                 if (option == "2")
                 {
-                    var size = StandardMessages.Values();
+                    var size = StandardMessages.Size(); // returns the size inputed by the user
                     QueueProgram queue = new QueueProgram(size); // Creates an object of the QueueProgram class
                     while (true) // A continuous loop for the queue program class
                     {

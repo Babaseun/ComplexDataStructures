@@ -2,15 +2,15 @@
 
 namespace ComplexDataStructures
 {
-    internal class Stack
+    internal class Stack<T>
     {
-        private string[] array; // Stores an array of values
+        private T[] array; // Stores an array of values of generic type T
 
         private int size; // size of the array
 
         public Stack(int size)
         {
-            array = new string[size];  // new object of the stack array
+            array = new T[size];  // De clearing a new object of generic type T and the size
 
             size = 0; // size of the array
         }
@@ -20,24 +20,24 @@ namespace ComplexDataStructures
             return this.size == 0; // returns a boolean value if array is empty
         }
 
-        public void Push(string value)
+        public void Push(T value)
         {
-            array[this.size++] = value; // Adds to the array and increments the size
+            array[this.size++] = value; // Adds value to the array and increments the size by 1
         }
 
-        public void Pop()
+        public void Pop() // Pops values from the back of the array
         {
             try
             {
-                this.size--; // Decreasing the size the array is popped
-                string[] values = new string[this.size];// Temporary storage of all the values in the array
+                this.size--; // Decreasing the size the array as values are  popped off
+                T[] values = new T[this.size];// Temporary storage of all the values in the array of generic type T
 
                 for (int i = 0; i < this.array.Length - 1; i++)
                 {
                     values[i] = this.array[i]; // Adds the values in the array to the temporary storage
                 }
 
-                this.array = values; // Reset values in the array to the temporary storage array
+                this.array = values; // Resets or re-assign the values in the array to the temporary storage array
             }
             catch (IndexOutOfRangeException e) // Catches error when the index is out of range
             {
@@ -50,7 +50,7 @@ namespace ComplexDataStructures
             return size; // Returns the size of the array
         }
 
-        public string Peek()
+        public T Peek()
         {
             return this.array[this.size - 1]; //Returns the last value
         }

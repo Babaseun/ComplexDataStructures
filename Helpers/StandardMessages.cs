@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ComplexDataStructures.Helpers
 {
@@ -10,18 +8,17 @@ namespace ComplexDataStructures.Helpers
         {
             Console.WriteLine("Welcome to Complex Data Structures\n");
             Console.WriteLine("Choose one of the following options\n" +
-                "              1. Stack \n" +                                      //Main menu options for users to choose from
-                "              2. Queue\n" +
-                "              3. LinkedList\n" +
-                "              4. Press q to go to the main menu");
+                "              1. Press 1 for Stack \n" +                                      //Main menu options for users to choose from
+                "              2. Press 2 for Queue\n" +
+                "              3. Press 3 LinkedList\n");
         }
 
-        public static int Values()
+        public static int Size()
         {
             Console.WriteLine("How many values do you want to add");
-            var value = int.Parse(Console.ReadLine());
+            var size = int.Parse(Console.ReadLine());
 
-            return value;
+            return size;
         }
     }
 }
