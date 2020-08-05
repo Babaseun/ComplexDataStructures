@@ -36,9 +36,7 @@ namespace ComplexDataStructures
 
             var current = this.Head; // Gets the head of the linked-list
 
-            while (!current.Element.Equals(value)) /** When the current element is not equal
-                                                    * to the value to be removed
-                                                    **/
+            while (!current.Element.Equals(value)) // When the current element is not equal to the value to be removed
             {
                 prevNode = current;// Assigns the current value to the previousNode
                 current = current.Next; // Resets the current value to the next node
@@ -89,11 +87,10 @@ namespace ComplexDataStructures
             try
             {
                 var current = this.Head;
-                while (!current.Element.Equals(value))                  /** While the current element is not
-                                                                    * the value i am looking for **/
+                while (!current.Element.Equals(value))  // While the current element is not the value i am looking for
                 {
                     current = current.Next; /* Re-assigns the current to the next element in the
-                                             * LinkedList*/
+                                             * LinkedList */
                 }
                 return true;
             }
